@@ -1,0 +1,1621 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{rwth}
+\usepackage{braket}
+
+\title{Monte Carlo simulations for the JEDI polarimeter at COSY}
+\subtitle{\vspace{2cm} \hspace{15cm} \includegraphics{gfx/jedi_logo2.png} \vspace{-2cm}}
+\author{Paul Maanen on behalf of the JEDI Collaboration}
+\institute{JEDI Collaboration | Physics Institute III B, RWTH Aachen University}
+\date[\today]{DPG Frühjahrstagung 2016}
+
+% Some changes on the layout, can be switched off by commenting out
+\setheadlinestyle{headlineframetitle}
+\setfooterstyle{footertitleauthor}
+\setfootlinestyle{footlinedatepages}
+
+% German style date formatting (footer)
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+% To get greek letters better matching with rest of font
+\usepackage{upgreek}
+
+\logo{\includegraphics{gfx/rwth_3physik_b_englisch_rgb.png}}
+
+\newif\ifexperimentlogo %-> defines a boolean variable for an if-case
+\experimentlogotrue     %-> sets it true(\experimentlogotrue)/false(\experimentlogofalse); !: no spaces between
+% \pgfdeclareimage[options]{name}[file}
+\pgfdeclareimage[height=13mm,interpolate=true]{experimentLogo}{gfx/jedi_logo2.png} %links a logo to the name experimentlogo 
+\end_preamble
+\options t
+\use_default_options true
+\begin_modules
+fixltx2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercolor{title page bar}{fg=rwth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamertemplate{title page}[rwth]{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+titlepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Motivation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Where is the Antimatter in our Universe? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+One precondition for Baryogenesis: 
+\begin_inset Formula $\mathcal{\cancel{CP}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Standard Model prediction: 
+\begin_inset Formula $\frac{n_{B}-n_{\bar{B}}}{n_{\gamma}}\approx10^{-18}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+WMAP and COBE (2012): 
+\begin_inset Formula $\frac{n_{B}-n_{\bar{B}}}{n_{\gamma}}\approx10^{-10}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Not enough 
+\begin_inset Formula $\cancel{\mathcal{CP}}$
+\end_inset
+
+ in Standard Modell
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{H}=-d\frac{\vec{S}}{S}\cdot\vec{E}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 1
+use_makebox 0
+width "20col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $d=EDM$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathcal{H}=+d\frac{\vec{S}}{S}\cdot\vec{E}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathcal{H}=+d\frac{\vec{S}}{S}\cdot\vec{E}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Electric
+\begin_inset space \space{}
+\end_inset
+
+Dipole
+\begin_inset space \space{}
+\end_inset
+
+Moments violate 
+\begin_inset Formula $\mathcal{CP}$
+\end_inset
+
+ (assuming 
+\begin_inset Formula $\mathcal{CPT}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Probe into the physics of the early universe
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nuclear scattering polarimetry
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nuclear scattering cross section for scattering of polarized particles:
+ 
+\begin_inset Formula $\sigma(\theta,\phi)=\sigma_{0}(\theta)\cdot\big(1+P_{y}A_{y}(\theta)\cdot\cos(\phi)\big)$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Measure left-right asymmetries in cross section: 
+\begin_inset Formula $P_{y}=\frac{1}{A_{y}}\frac{L-R}{L+R}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+May need to also include up, down to account for tensor polarization
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Currently using elastic deuteron-carbon scattering
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename left-right.eps
+	height 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Design goals for an EDM polarimeter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+EDM search in storage rings: Let EDM interact with fields, wait for polarization
+ change: 
+\begin_inset Formula $\frac{d\vec{S}}{dt}\propto d\vec{E}\times\vec{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Graphics
+	filename idea.png
+	lyxscale 30
+	height 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -95mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Current candidate method for EDM search implicates a linear buildup of polarizat
+ion with time at 
+\begin_inset Formula $\Delta P=\mathcal{O}(10^{-6}/1000s)$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Design goals for polarimeter:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Large FoM
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Minimal influence on beam
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+High sensitivity to systematic effects
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Good long term stability and reproducibility
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Detector concept
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Target choice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename FOM.pdf
+	height 77.5theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Carbon was chosen as working choice
+\end_layout
+
+\begin_layout Itemize
+Large analysing power, high elastic cross section
+\end_layout
+
+\begin_layout Itemize
+FOM for Protons also concentrated in the forward region
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Detector concept
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename DetectorSketch.pdf
+	lyxscale 50
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Simulation studies
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Signal generation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename EvsTheta.pdf
+	lyxscale 75
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename hEpEn.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Elastically scattered deuterons retain almost complete beam energy.
+\end_layout
+
+\begin_layout Itemize
+Break-up has almost no analyzing power, so discard it
+\end_layout
+
+\begin_layout Itemize
+Protons and neutrons from break-up are energetically well separated
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Complete stop of particles provides good signal separation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Inelastic reactions carry some analysing power, so maybe keep these
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Candidate Material: LYSO/Plastic Scintillator 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename LYSO-example.pdf
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace 15mm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename sandwich-example.pdf
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LYSO
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Plastic
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Density [g/cm3] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.05
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Decay [ns]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+L.
+ Y.
+ % NaI(Tl)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S.
+ Peak [nm]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+420
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+420
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N ref.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.58
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Melt.
+ 
+\begin_inset Formula $[\text{°C}]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2050
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hygrosc.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radioact
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Yes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulation setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename detector.pdf
+	lyxscale 50
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Generated 10k events of elastic and breakup each at 
+\begin_inset Formula $T_{d}=270\,\mathrm{MeV}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Detector acceptance: 
+\begin_inset Formula $5^{\circ}<\Theta<20^{\circ}$
+\end_inset
+
+, 
+\begin_inset Formula $0^{\circ}<\phi<360^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lyso scintillators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename deuteron-lyso-270-range.pdf
+	lyxscale 50
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename deuteron-lyso-270-x.pdf
+	lyxscale 50
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Chosen detector size of 
+\begin_inset Formula $3\times3\times10\,$
+\end_inset
+
+
+\begin_inset Formula $\mathrm{cm}^{3}$
+\end_inset
+
+as starting value
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Detection efficiencies (lyso)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename lyso-elastic.pdf
+	lyxscale 75
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename lyso-breakup.pdf
+	lyxscale 75
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename fom-lyso.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Plastic scintillators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename deuteron-iron-270-ekin_vs_z_pfx.pdf
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename deuteron-plastic-100-range.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use degrader to suppress photon background and reduce length of plastic
+ detector.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T_{d}=270\,\mathrm{MeV}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Absorber thickness 
+\begin_inset Formula $\approx40\,\mbox{mm}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Scintillator thickness 
+\begin_inset Formula $\approx50\,$
+\end_inset
+
+
+\begin_inset Formula $mm$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Detection efficiencies (plastic)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename plastic-elastic.pdf
+	lyxscale 75
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename plastic-breakup.pdf
+	lyxscale 75
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename fom-plastic.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Main cause of efficiency loss is breakup in detector
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maximum relative FOM:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Plastic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.54
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LYSO
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+No strong dependence on energy resolution
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+LYSO and plastic scintillators provide comparable performance
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+No strong dependence on energy resolution
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Summary & Outlook
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary & Outlook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We have a candidate layout for JEDI polarimeter
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Simulations suggest promising performance
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hardware tests with LYSO crystals are in progress
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Will include 
+\begin_inset Formula $\Delta E-E$
+\end_inset
+
+ particle identification technique
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Will include inelastic scattering in simulation
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

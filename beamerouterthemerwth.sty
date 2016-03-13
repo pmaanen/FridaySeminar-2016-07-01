@@ -1,0 +1,259 @@
+\mode<presentation>
+
+\RequirePackage{calc}
+\RequirePackage{graphicx}
+
+\providecommand\insertframetitle{} 
+
+% \framelinewidth is width of frame elements like title, text and separator lines
+\newlength{\framelinewidth}
+\setlength{\framelinewidth}{\paperwidth-16mm}
+% \foottextwidth is width of footer text
+\newlength{\foottextwidth}
+\setlength{\foottextwidth}{\paperwidth-31.2mm-98.9mm-4.5mm}
+% \headwidth is the width of the text in headline without the space for 2nd logo
+% here the width is for a logo format of 2:1, the height should be 13mm, therefore the logobox is 26mm
+\newlength{\headwidth}
+\setlength{\headwidth}{\paperwidth-24mm-26mm} 
+
+% Maxbox: Ensure #3 is no wider than #1 and taller than #2
+\providecommand{\maxbox}[3]{%
+  \setbox9=\hbox{{#3}}%
+  \ifdim\wd9>#1
+    \setbox9=\hbox{\resizebox{#1}{!}{#3}}%
+  \else
+    {}%
+  \fi%
+  \ifdim\ht9>#2
+    \setbox9=\hbox{\resizebox{!}{#2}{\usebox9}}%
+  \else
+    {}%
+  \fi%
+  \usebox9
+}
+
+\newcommand{\nempty}[3]{\ifx#1\empty#3{}\else#2{}\fi}
+
+% CHANGE: Enable choise between different headlinestyles
+\newcommand{\headlinerwthexample}{headlinerwthexample}
+\newcommand{\headlineframetitle}{headlineframetitle}
+\newcommand{\headlinestyle}{headlinerwthexample}
+\newcommand{\setheadlinestyle}[1]{\renewcommand{\headlinestyle}{#1}} % for available styles see commands above 
+
+% CHANGE: Enable choise between different footerstyles
+\newcommand{\footerrwthexample}{footerrwthexample}
+\newcommand{\footertitleauthor}{footertitleauthor}
+\newcommand{\footerstyle}{footerrwthexample}
+\newcommand{\setfooterstyle}[1]{\renewcommand{\footerstyle}{#1}} % for available styles see commands above 
+
+% CHANGE: Enable choise between different positions of date and pages in footline
+\newcommand{\footlinerwthexample}{footlinerwthexample}	% p of P \\ Date
+\newcommand{\footlinepagesdate}{footlinepagesdate}	% p/P	 \\ Date
+\newcommand{\footlinepagedate}{footlinepagedate}	% p	 \\ Date
+\newcommand{\footlinedatepagesof}{footlinedatepagesof}% Date	 \\ p of P
+\newcommand{\footlinedatepages}{footlinedatepages}	% Date	 \\ p/P
+\newcommand{\footlinedatepage}{footlinedatepage}	% Date	 \\ p
+\newcommand{\footlinestyle}{footlinerwthexample}
+\newcommand{\setfootlinestyle}[1]{\renewcommand{\footlinestyle}{#1}} % for available styles see commands above 
+
+
+% CHANGE: Own footer style with just title and author in footer
+% Command building footer (RWTH template)
+\defbeamertemplate*{footertext}{rwth}{
+\ifx \footerstyle \footerrwthexample
+	\nempty{\inserttitle}{\inserttitle{}\\}{}%
+	\nempty{\insertauthor}{\insertauthor{}\\}{}%
+	\nempty{\insertinstitute}{\insertinstitute{}\\}{}%
+	\ifbeamertemplateempty{footertextextra}{}{\usebeamertemplate{footertextextra}}%
+% Command building footer (still corporate design)
+\else \ifx \footerstyle \footertitleauthor
+	\nempty{\inserttitle}{\inserttitle{}\\}{}%
+	\nempty{\insertshortauthor}{\vspace*{.5\baselineskip}\\}{}%
+	\nempty{\insertshortauthor}{\insertshortauthor{}\\}{}%
+	\ifbeamertemplateempty{footertextextra}{}{\usebeamertemplate{footertextextra}}%
+\else 
+	\PackageWarning{rwthbeamertheme}{Unknown footer style: Your footer will be empty}
+\fi
+\fi
+	}
+
+
+
+% Custom footer text and command
+\defbeamertemplate*{footertextextra}{rwth}{}
+
+\setlength{\headsep}{0pt}
+
+\makeatletter
+\newlength\leftmarrr
+\setlength{\leftmarrr}{\beamer@leftmargin}
+\makeatother
+
+\makeatletter
+\define@key{beamerframe}{t}[true]{% top
+  \beamer@frametopskip=0pt\relax%
+  \beamer@framebottomskip=0pt plus 1fill\relax%
+  \beamer@frametopskipautobreak=\beamer@frametopskip\relax%
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip\relax%
+  \def\beamer@initfirstlineunskip{%
+    \def\beamer@firstlineitemizeunskip{%
+      \vskip-\partopsep\vskip-\topsep\vskip-\parskip%
+      \global\let\beamer@firstlineitemizeunskip=\relax}%
+    \everypar{\global\let\beamer@firstlineitemizeunskip=\relax}}
+}
+\makeatother
+
+%%%
+% Header
+%%%
+\defbeamertemplate*{headline}{rwth}{
+\ifx \headlinestyle \headlinerwthexample
+	\hbox{%
+		\vspace{5.7mm}
+		\hspace*{8mm}%
+		\parbox[b]{\headwidth}{
+		%split the headline in two parboxes, first one for the headline
+			\begin{beamercolorbox}[wd=\headwidth,ht=13mm]{section in head/foot}%
+			\usebeamerfont{section in head/foot}\insertsectionhead\strut%
+			\nempty{\insertsubsectionhead}{\newline\usebeamerfont{subsection in head/foot}\insertsubsectionhead\strut}{}%
+			\end{beamercolorbox}%
+		}
+		\hspace*{8mm}%
+		%second one for the experiment, box empty if no experiment logo is used
+		\parbox[b]{13mm}{    
+			\ifexperimentlogo    
+				\hfill{}%
+				\vbox to13mm{%
+					\hfill\maxbox{26mm}{13mm}{\pgfuseimage{experimentLogo}}%
+					\vfil{}
+				}%
+			\else
+			\fi
+   		}
+	}%
+	\vspace{1.9mm}
+	\hspace*{8mm}\begin{beamercolorbox}[wd=\framelinewidth,colsep=0.25pt]{separation line}
+	\end{beamercolorbox}%
+	\vskip-\partopsep\vskip-\topsep\vskip-\parskip
+	\vskip9.4mm
+	\vskip1mm
+\else 	\ifx \headlinestyle \headlineframetitle
+	\vspace{5.7mm}
+	\hbox{%
+		\hspace*{8mm}%
+		%split the headline in two parboxes, first one for the headline
+		\parbox[b]{\headwidth}{
+			\begin{beamercolorbox}[wd=\headwidth,ht=13mm]{section in head/foot}%
+			\usebeamerfont{frametitle}\insertframetitle%
+			\end{beamercolorbox}%
+		}
+		\hspace*{8mm}%
+		%second one for the experiment, box just exist if a experiment logo is used		
+		\parbox[b]{13mm}{    
+			\ifexperimentlogo   
+			\hfill{}%
+				\vbox to13mm{%	
+					\hfill\maxbox{26mm}{13mm}{\pgfuseimage{experimentLogo} }%
+					\vfil{}
+				}%
+			\else
+			\fi
+   		}
+	}%
+	\vspace{1.9mm}
+	\hspace*{8mm}\begin{beamercolorbox}[wd=\framelinewidth,colsep=0.25pt]{separation line}
+	\end{beamercolorbox}%
+	\vskip-\partopsep\vskip-\topsep\vskip-\parskip
+	\vskip9.4mm
+	\vskip1mm
+\else
+	\PackageWarning{rwthbeamertheme}{Unknown headline style: Your headline will be empty}
+\fi
+\fi
+}
+
+%%%
+% Frame title
+%%%
+\defbeamertemplate*{frametitle}{rwth}
+{
+\ifx \headlinestyle \headlinerwthexample
+	\vskip-9mm
+	\hspace{-\leftmarrr}
+	\hspace{8mm}
+	\begin{beamercolorbox}[wd=\framelinewidth,ht=7mm]{frametitle}
+	\usebeamerfont{frametitle}\insertframetitle%
+	\end{beamercolorbox}
+	\vskip0.2em
+\else
+\fi
+}
+
+%%%
+% Footer
+%%%
+\defbeamertemplate*{footline}{rwth}{
+%\vspace{5.7mm} % Minimum space between content and footer, not really required
+\hspace*{8mm}\begin{beamercolorbox}[wd=\framelinewidth,colsep=0.25pt]{separation line}
+\end{beamercolorbox}%
+
+\hbox{%
+%
+  \hspace*{8mm}%
+%
+  \parbox[b]{20.2mm}{%
+    \vspace{5.7mm}%
+    \begin{beamercolorbox}[wd=20.2mm,ht=11.2mm]{page number in head/foot}%
+    \usebeamerfont{page number in head/foot}%
+    %CHANGE: choise of position of slide number with position of date
+    \ifx \footlinestyle \footlinerwthexample
+    	\vbox to11.2mm{\insertframenumber{} of \inserttotalframenumber \vfil{} \nempty{\insertdate}{\insertshortdate}{}  \vfil{}}%
+    \else \ifx \footlinestyle \footlinepagesdate
+    	\vbox to11.2mm{\insertframenumber{}/\inserttotalframenumber \vfil{} \nempty{\insertdate}{\insertshortdate}{}  \vfil{}}%
+    \else \ifx \footlinestyle \footlinepagedate 
+    	\vbox to11.2mm{\insertframenumber{} \vfil{} \nempty{\insertdate}{\insertshortdate}{}  \vfil{}}%
+    \else \ifx \footlinestyle \footlinedatepagesof
+    	\vbox to11.2mm{\nempty{\insertdate}{\insertshortdate}{} \vfil{} \insertframenumber{} of \inserttotalframenumber \vfil{}}%
+    \else \ifx \footlinestyle \footlinedatepages
+    	\vbox to11.2mm{\nempty{\insertdate}{\insertshortdate}{} \vfil{} \insertframenumber{}/\inserttotalframenumber \vfil{}}%
+    \else \ifx \footlinestyle \footlinedatepage
+    	\vbox to11.2mm{\nempty{\insertdate}{\insertshortdate}{} \vfil{} \insertframenumber{} \vfil{}}%
+    \else \PackageWarning{rwthbeamertheme}{Unknown footline style: Your footline will be empty}
+    \fi \fi \fi \fi \fi \fi
+    \end{beamercolorbox}%
+    \vspace{5.7mm}%
+  }%
+%
+  \hspace*{3mm}%
+  \parbox[b]{\foottextwidth}{%
+    \vspace{5.7mm}%
+    \begin{beamercolorbox}[wd=\foottextwidth,ht=11.2mm]{text in head/foot}%
+    \usebeamerfont{text in head/foot}%
+    \vbox to11.2mm{\usebeamertemplate{footertext}
+    \vfil{}}%
+    \end{beamercolorbox}%
+    \vspace{5.7mm}%
+  }%
+%
+  \parbox[b]{98.9mm}{%
+    \hfill{}%
+    \begin{beamercolorbox}[wd=98.9mm,ht=22.6mm]{logo}%
+    \usebeamerfont{logo}%
+    \vbox to22.6mm{%
+    {\hfill\maxbox{98.9mm}{22.6mm}{\insertlogo}}%
+    \vfil{}}%
+    \end{beamercolorbox}%
+  }%
+%
+  \hspace*{4.5mm}%
+%
+}%
+}
+
+\defbeamertemplate*{sidebar left}{rwth}{}
+\defbeamertemplate*{sidebar right}{rwth}{}
+\setbeamersize{sidebar width left=0pt}
+\setbeamersize{sidebar width right=0pt}
+\defbeamertemplate*{navigation symbols}{rwth}{}
+
+\mode<all>
