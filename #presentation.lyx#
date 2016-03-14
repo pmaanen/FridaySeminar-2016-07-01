@@ -1240,10 +1240,10 @@ Detection efficiencies (lyso)
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\mathcal{FOM}\propto\epsilon_{Signal}\times\left(\frac{\epsilon_{Signal}}{\epsilon_{Signal}+\epsilon_{Background}}\right)^{^{2}}$
+\begin_inset Formula $\mathcal{FOM}\propto\epsilon_{Signal}\times\left(\frac{\epsilon_{Signal}-\epsilon_{BG}}{}\right)\frac{}{}$
 \end_inset
 
-(assuming that the AP of breakup is zero) 
+Assuming that the AP of is zero, 
 \end_layout
 
 \end_deeper
@@ -1517,6 +1517,17 @@ LYSO
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+No strong dependence on energy resolution
 \end_layout
 
 \begin_layout Standard
