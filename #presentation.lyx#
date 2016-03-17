@@ -1212,7 +1212,7 @@ Detection efficiencies (lyso)
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename lyso-elastic.pdf
+	filename lyso-dcelastic.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1220,7 +1220,7 @@ Detection efficiencies (lyso)
 
 
 \begin_inset Graphics
-	filename lyso-breakup.pdf
+	filename lyso-dcbreakup.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1240,10 +1240,10 @@ Detection efficiencies (lyso)
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\mathcal{FOM}\propto\epsilon_{Signal}\times\left(\frac{\epsilon_{Signal}-\epsilon_{BG}}{}\right)\frac{}{}$
+\begin_inset Formula $\mathcal{FOM}\propto\epsilon_{Signal}\times\left(\frac{\epsilon_{Signal}}{\epsilon_{Signal}+\epsilon_{Background}}\right)^{^{2}}$
 \end_inset
 
-Assuming that the AP of is zero, 
+(assuming that the AP of breakup is zero) 
 \end_layout
 
 \end_deeper
@@ -1345,7 +1345,7 @@ Detection efficiencies (plastic)
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename plastic-elastic.pdf
+	filename plastic-dcelastic.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1353,7 +1353,7 @@ Detection efficiencies (plastic)
 
 
 \begin_inset Graphics
-	filename plastic-breakup.pdf
+	filename plastic-dcbreakup.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1527,17 +1527,6 @@ LYSO
 \end_layout
 
 \begin_layout Itemize
-No strong dependence on energy resolution
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
 LYSO and plastic scintillators provide comparable performance
 \end_layout
 
@@ -1643,15 +1632,6 @@ Detector response - lyso
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Edep perfect, Edep 20%
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
