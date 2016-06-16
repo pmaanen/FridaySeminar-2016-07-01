@@ -756,8 +756,8 @@ Candidate Materials: LYSO/Plastic Scintillator
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename LYSO-example.pdf
-	width 30text%
+	filename scint-example.pdf
+	width 40text%
 
 \end_inset
 
@@ -772,7 +772,7 @@ Candidate Materials: LYSO/Plastic Scintillator
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset VSpace 15mm
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -787,8 +787,8 @@ Candidate Materials: LYSO/Plastic Scintillator
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename sandwich-example.pdf
-	width 30text%
+	filename LYSO-example.pdf
+	width 40text%
 
 \end_inset
 
@@ -1441,7 +1441,7 @@ Detection efficiencies (plastic)
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Graphics
 	filename fom-plastic.pdf
 	width 45text%
