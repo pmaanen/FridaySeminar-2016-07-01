@@ -7,11 +7,11 @@
 \usetheme{rwth}
 \usepackage{braket}
 
-\title{Monte Carlo simulations for the JEDI polarimeter at COSY}
+\title{JEDI Polarimetry}
 \subtitle{\vspace{2cm} \hspace{15cm} \includegraphics{gfx/jedi_logo2.png} \vspace{-2cm}}
-\author{Paul Maanen on behalf of the JEDI Collaboration}
+\author{Paul Maanen}
 \institute{JEDI Collaboration | Physics Institute III B, RWTH Aachen University}
-\date[\today]{DPG Frühjahrstagung 2016}
+\date[July 1, 2016]{Friday Seminar July 1, 2016}
 
 % Some changes on the layout, can be switched off by commenting out
 \setheadlinestyle{headlineframetitle}
@@ -417,6 +417,164 @@ Probe into the physics of the early universe
 status open
 
 \begin_layout Plain Layout
+Charged particle EDM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Most EDM searches measure neutron EDM.
+ Current limit 
+\begin_inset Formula $\approx10^{-25}e\mathrm{cm}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+No limits for charged hadrons exist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hadron EDM experiments have potentially better sensitivity.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Better lifetime
+\end_layout
+
+\begin_layout Itemize
+More particles
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To disentangle EDM sources, more than one measurement needed!
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EDM search in storage rings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All EDM experiments measure interaction between 
+\begin_inset Formula $\vec{d}$
+\end_inset
+
+ and electric field 
+\begin_inset Formula $\vec{E}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\frac{d\vec{S}}{dt}\propto d\vec{E}\times\vec{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+EDM search in storage rings: Let EDM interact with fields, wait for polarization
+ change: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Graphics
+	filename idea.png
+	lyxscale 30
+	height 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -95mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Current candidate method for EDM search implicates a linear buildup of polarizat
+ion with time at 
+\begin_inset Formula $\Delta P=\mathcal{O}(10^{-6}/1000s)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Nuclear scattering polarimetry
 \end_layout
 
@@ -492,54 +650,6 @@ Design goals for an EDM polarimeter
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-EDM search in storage rings: Let EDM interact with fields, wait for polarization
- change: 
-\begin_inset Formula $\frac{d\vec{S}}{dt}\propto d\vec{E}\times\vec{S}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Graphics
-	filename idea.png
-	lyxscale 30
-	height 8cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace -95mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Current candidate method for EDM search implicates a linear buildup of polarizat
-ion with time at 
-\begin_inset Formula $\Delta P=\mathcal{O}(10^{-6}/1000s)$
-\end_inset
-
-
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
 \begin_layout Itemize
 Design goals for polarimeter:
 \end_layout
@@ -638,6 +748,40 @@ FOM for Protons also concentrated in the forward region
 status open
 
 \begin_layout Plain Layout
+Target concept
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename target.png
+	lyxscale 25
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Detector concept
 \end_layout
 
@@ -649,8 +793,7 @@ Detector concept
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename DetectorSketch.pdf
-	lyxscale 50
+	filename /Users/pmaanen/Desktop/DetectorSketch.svg
 	height 100theight%
 
 \end_inset
@@ -659,6 +802,40 @@ Detector concept
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Readout concept
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename readout.png
+	lyxscale 25
+	height 90theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Section
 Simulation studies
 \end_layout
@@ -1622,6 +1799,266 @@ No strong dependence on energy resolution
 
 \end_deeper
 \begin_layout Section
+R&D Beam time @ COSY: First results
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Beam time Spring 2016
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+External beam at COSY in Jülich
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+LYSO crystals from two different manufacturers
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+PMT and Silicon Photomultiplier (SiPM).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Deuteron beam @ 100MeV, 150MeV, 200MeV, 235MeV and 270MeV
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Struck 14 bit, 250 MS/s Flash ADC.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset VSpace -2cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/cosy_only_edda_only_big_karl.png
+	lyxscale 25
+	height 9cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Measurement setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename setup_sketch.png
+	lyxscale 25
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Measurement setup (cont'd)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename modules_side_view_w_labels.png
+	lyxscale 25
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Energy calibration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename Calibration.pdf
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Energy resolution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename Resolutions.pdf
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Efficiency
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename Efficiency.pdf
+	height 100theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\noun on
+Fabian Müller
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
 Summary & Outlook
 \end_layout
 
@@ -1630,7 +2067,7 @@ Summary & Outlook
 status open
 
 \begin_layout Plain Layout
-Summary & Outlook
+Summary
 \end_layout
 
 \end_inset
@@ -1652,6 +2089,15 @@ We have a candidate layout for JEDI polarimeter
 
 \begin_layout Itemize
 Simulations suggest promising performance
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A deuteron beam with five different energies up to 270MeV was used to examine
+ the prototype LYSO modules
 \end_layout
 
 \begin_layout Standard
@@ -1662,7 +2108,7 @@ Simulations suggest promising performance
 \end_layout
 
 \begin_layout Itemize
-Hardware tests with LYSO crystals are in progress
+The resolution of the LYSO modules was better than 3%
 \end_layout
 
 \begin_layout Standard
@@ -1673,11 +2119,8 @@ Hardware tests with LYSO crystals are in progress
 \end_layout
 
 \begin_layout Itemize
-Will include 
-\begin_inset Formula $\Delta E-E$
-\end_inset
-
- particle identification technique
+A deuteron reconstruction efficiency over 65% have been achieved in the
+ whole energy spectrum
 \end_layout
 
 \begin_layout Standard
@@ -1688,7 +2131,8 @@ Will include
 \end_layout
 
 \begin_layout Itemize
-Will include inelastic scattering in simulation
+The SiPM readout promises good results without the need for an active amplificat
+ion circuit and high voltage
 \end_layout
 
 \end_deeper
@@ -1696,5 +2140,37 @@ Will include inelastic scattering in simulation
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outlook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Theoretical calculations for signal and background cross sections and analyzing
+ powers are under progress and will be included in simulation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next beamtime will include a greater number of crystals and test polarization
+ measurements 
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
