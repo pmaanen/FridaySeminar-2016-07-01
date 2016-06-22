@@ -31,6 +31,16 @@
 \experimentlogotrue     %-> sets it true(\experimentlogotrue)/false(\experimentlogofalse); !: no spaces between
 % \pgfdeclareimage[options]{name}[file}
 \pgfdeclareimage[height=13mm,interpolate=true]{experimentLogo}{gfx/jedi_logo2.png} %links a logo to the name experimentlogo 
+\AtBeginSection[]{
+  \begin{frame}[plain, noframenumbering]{}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
 \end_preamble
 \options t
 \use_default_options true
@@ -54,7 +64,7 @@ fixltx2e
 \font_tt_scale 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -126,6 +136,16 @@ setbeamertemplate{title page}[rwth]{}
 \end_layout
 
 \begin_layout PlainFrame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+noframenumbering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Argument 4
 status open
 
@@ -540,7 +560,7 @@ EDM search in storage rings: Let EDM interact with fields, wait for polarization
 \begin_layout Standard
 \align right
 \begin_inset Graphics
-	filename idea.png
+	filename gfx/idea.png
 	lyxscale 30
 	height 8cm
 
@@ -623,7 +643,7 @@ Currently using elastic deuteron-carbon scattering
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename left-right.eps
+	filename gfx/left-right.eps
 	height 50theight%
 
 \end_inset
@@ -718,7 +738,7 @@ Target choice
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename FOM.pdf
+	filename gfx/FOM.pdf
 	height 77.5theight%
 
 \end_inset
@@ -759,7 +779,7 @@ Target concept
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename target.png
+	filename gfx/target.png
 	lyxscale 25
 	height 100theight%
 
@@ -793,7 +813,8 @@ Detector concept
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/pmaanen/Desktop/DetectorSketch.svg
+	filename gfx/DetectorSketch.pdf
+	lyxscale 25
 	height 100theight%
 
 \end_inset
@@ -822,9 +843,9 @@ Readout concept
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename readout.png
+	filename gfx/readout.png
 	lyxscale 25
-	height 90theight%
+	height 100theight%
 
 \end_inset
 
@@ -845,74 +866,7 @@ Simulation studies
 status open
 
 \begin_layout Plain Layout
-Signal generation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename EvsTheta.pdf
-	lyxscale 75
-	width 50text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename hEpEn.pdf
-	width 50text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Elastically scattered deuterons retain almost complete beam energy.
-\end_layout
-
-\begin_layout Itemize
-Break-up has almost no analyzing power, so discard it
-\end_layout
-
-\begin_layout Itemize
-Protons and neutrons from break-up are energetically well separated
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
-Complete stop of particles provides good signal separation
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Inelastic reactions carry some analysing power, so maybe keep these
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Candidate Materials: LYSO/Plastic Scintillator 
+HCal Candidate Materials: LYSO/Plastic Scintillator 
 \end_layout
 
 \end_inset
@@ -933,8 +887,9 @@ Candidate Materials: LYSO/Plastic Scintillator
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename scint-example.pdf
-	width 40text%
+	filename gfx/lyso_sketch.svg
+	lyxscale 5
+	width 30text%
 
 \end_inset
 
@@ -964,8 +919,9 @@ Candidate Materials: LYSO/Plastic Scintillator
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename LYSO-example.pdf
-	width 40text%
+	filename gfx/plastic_sketch.svg
+	lyxscale 5
+	width 30text%
 
 \end_inset
 
@@ -986,7 +942,7 @@ Candidate Materials: LYSO/Plastic Scintillator
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features rotate="0" booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
@@ -1261,6 +1217,35 @@ No
 \end_inset
 </cell>
 </row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cheap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
 </lyxtabular>
 
 \end_inset
@@ -1268,6 +1253,213 @@ No
 
 \end_layout
 
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Signal and Background
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename gfx/EvsTheta.pdf
+	lyxscale 75
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/hEpEn.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Elastically scattered deuterons retain almost complete beam energy.
+\end_layout
+
+\begin_layout Itemize
+Break-up has almost no analyzing power, so discard it
+\end_layout
+
+\begin_layout Itemize
+Protons and neutrons from break-up are energetically well separated
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Complete stop of particles provides good signal separation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No reliable model for inelastic reactions available
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Qualitative experiments: Inelastic reactions carry some analysing power,
+ so maybe keep these
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LYSO module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+lateral vs energy, range vs energy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/lyso-range.pdf
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/lyso-x.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Chosen detector size of 
+\begin_inset Formula $3\times3\times10\,$
+\end_inset
+
+
+\begin_inset Formula $\mathrm{cm}^{3}$
+\end_inset
+
+as starting value
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Plastic scintillators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/thickness.pdf
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../DPG2016/deuteron-plastic-100-range.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use absorber to suppress proton background and reduce length of plastic
+ detector.
+\end_layout
+
+\begin_layout Itemize
+Arbitrarily chosen 
+\begin_inset Formula $50\,\mathrm{MeV}$
+\end_inset
+
+ as working point for calorimeter element
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tune thickness of absorber so that 
+\begin_inset Formula $E_{entry}=100\,\mathrm{MeV}$
+\end_inset
+
+for every beam energy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Thickness vs Energy, Lateral vs Energy, Range vs Energy, Edep vs Eprim 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -1287,6 +1479,19 @@ Simulation setup
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Bild einfügen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Geometry: Single detector element
 \end_layout
@@ -1340,60 +1545,10 @@ Background:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\mathcal{FOM}\propto(\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg})\times\left(\frac{A_{y,el}\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg}A_{y,bg}}{(\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg})}\right)^{^{2}}$
+\begin_inset Formula $\mathcal{FOM}\propto\sigma_{eff}\times<A_{y}>^{2}=(\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg})\times\left(\frac{A_{y,el}\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg}A_{y,bg}}{(\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg})}\right)^{^{2}}$
 \end_inset
 
 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Lyso scintillators
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Graphics
-	filename deuteron-lyso-270-range.pdf
-	lyxscale 50
-	width 45text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename deuteron-lyso-270-x.pdf
-	lyxscale 50
-	width 45text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Chosen detector size of 
-\begin_inset Formula $3\times3\times10\,$
-\end_inset
-
-
-\begin_inset Formula $\mathrm{cm}^{3}$
-\end_inset
-
-as starting value
 \end_layout
 
 \end_deeper
@@ -1417,7 +1572,7 @@ Detector response - lyso
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename cocktail-lyso.pdf
+	filename gfx/cocktail-lyso.pdf
 	width 80text%
 
 \end_inset
@@ -1426,7 +1581,7 @@ Detector response - lyso
 \end_layout
 
 \begin_layout Itemize
-Breakup is main cause of efficiency loss 
+Breakup in detector element is main cause of efficiency loss.
 \end_layout
 
 \end_deeper
@@ -1450,7 +1605,7 @@ Detection efficiencies (lyso)
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename lyso-dcelastic.pdf
+	filename gfx/lyso-dcelastic.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1458,7 +1613,7 @@ Detection efficiencies (lyso)
 
 
 \begin_inset Graphics
-	filename lyso-dcbreakup.pdf
+	filename gfx/lyso-dcbreakup.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1469,7 +1624,7 @@ Detection efficiencies (lyso)
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename fom-lyso.pdf
+	filename gfx/fom-lyso.pdf
 	width 45text%
 
 \end_inset
@@ -1477,76 +1632,6 @@ Detection efficiencies (lyso)
 
 \end_layout
 
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Plastic scintillators
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Graphics
-	filename deuteron-iron-270-ekin_vs_z_pfx.pdf
-	width 45text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename deuteron-plastic-100-range.pdf
-	width 45text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Use degrader to suppress photon background and reduce length of plastic
- detector.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $T_{d}=270\,\mathrm{MeV}$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Absorber thickness 
-\begin_inset Formula $\approx40\,\mbox{mm}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Scintillator thickness 
-\begin_inset Formula $\approx50\,$
-\end_inset
-
-
-\begin_inset Formula $mm$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -1568,7 +1653,7 @@ Detector response - plastic
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename cocktail-plastic.pdf
+	filename gfx/cocktail-plastic.pdf
 	width 80text%
 
 \end_inset
@@ -1601,7 +1686,7 @@ Detection efficiencies (plastic)
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename plastic-dcelastic.pdf
+	filename gfx/plastic-dcelastic.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1609,7 +1694,7 @@ Detection efficiencies (plastic)
 
 
 \begin_inset Graphics
-	filename plastic-dcbreakup.pdf
+	filename gfx/plastic-dcbreakup.pdf
 	lyxscale 75
 	width 45text%
 
@@ -1620,7 +1705,7 @@ Detection efficiencies (plastic)
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename fom-plastic.pdf
+	filename gfx/fom-plastic.pdf
 	width 45text%
 
 \end_inset
@@ -1638,7 +1723,7 @@ Detection efficiencies (plastic)
 status open
 
 \begin_layout Plain Layout
-Results
+Simulation Results
 \end_layout
 
 \end_inset
@@ -1794,7 +1879,8 @@ LYSO and plastic scintillators provide comparable performance
 \end_layout
 
 \begin_layout Itemize
-No strong dependence on energy resolution
+Plastic scintillator performance exhibits no strong dependence on energy
+ resolution 
 \end_layout
 
 \end_deeper
@@ -1901,8 +1987,12 @@ Measurement setup
 
 \begin_deeper
 \begin_layout Standard
+Fabian Müller
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
-	filename setup_sketch.png
+	filename gfx/setup_sketch.png
 	lyxscale 25
 	height 100theight%
 
@@ -1935,8 +2025,12 @@ Measurement setup (cont'd)
 
 \begin_deeper
 \begin_layout Standard
+Fabian Müller
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
-	filename modules_side_view_w_labels.png
+	filename gfx/modules_side_view_w_labels.png
 	lyxscale 25
 	height 100theight%
 
@@ -1966,7 +2060,7 @@ Energy calibration
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename Calibration.pdf
+	filename gfx/Calibration.pdf
 	height 100theight%
 
 \end_inset
@@ -2003,7 +2097,7 @@ Energy resolution
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename Resolutions.pdf
+	filename gfx/Resolutions.pdf
 	height 100theight%
 
 \end_inset
@@ -2032,7 +2126,7 @@ Efficiency
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename Efficiency.pdf
+	filename gfx/Efficiency.pdf
 	height 100theight%
 
 \end_inset
@@ -2047,17 +2141,63 @@ Efficiency
 
 \end_layout
 
-\begin_layout Standard
-
-\noun on
-Fabian Müller
-\end_layout
-
 \end_deeper
 \begin_layout Separator
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Measurement Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+5 LYSO modules succesfully commissioned, PMT and SiPM readout tested
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Calibration curve exhibits considerable nonlinearity
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Energy resolution between 1% and 4%
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Deuteron reconstruction efficiency above 70%
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Summary & Outlook
 \end_layout
