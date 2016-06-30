@@ -1294,6 +1294,13 @@ First step: Detector element dimensions
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Open Questions:
 \end_layout
@@ -1359,15 +1366,22 @@ lateral vs energy, range vs energy
 \begin_layout Standard
 \begin_inset Graphics
 	filename gfx/lyso-range.pdf
-	width 45text%
+	width 50text%
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename gfx/lyso-x.pdf
-	width 45text%
+	width 50text%
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
 \end_inset
 
 
@@ -1393,6 +1407,13 @@ Longitudinal range: Gaussian fit
 \begin_layout Itemize
 Lateral width: 
 \begin_inset Formula $\int_{-x0}^{x0}dN/dx=90\%\cdot N_{tot}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
 \end_inset
 
 
@@ -1448,7 +1469,7 @@ Detector response - LYSO
 \end_layout
 
 \begin_layout Itemize
-Breakup in detector element is main cause of efficiency loss.
+Breakup in detector element causes distortion of energy spectrum
 \end_layout
 
 \end_deeper
@@ -1494,9 +1515,23 @@ Detector dimensions - Plastic
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Use absorber to suppress proton background and reduce length of plastic
  detector
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -1712,15 +1747,22 @@ Signal and Background generation
 \begin_layout Standard
 \begin_inset Graphics
 	filename gfx/hDeuteron.pdf
-	width 45text%
+	width 50text%
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename gfx/hCarbon.pdf
-	width 45text%
+	width 50text%
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
 \end_inset
 
 
@@ -1730,8 +1772,22 @@ Signal and Background generation
 Using data-driven model for signal and background
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-Elastically scattered deuterons retain almost complete beam energy.
+Elastically scattered deuterons retain almost complete beam energy
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -1770,14 +1826,14 @@ Proton, Neutron Energy vs Angle, Kein Cut in En vs Ep
 
 \begin_inset Graphics
 	filename gfx/hProton.pdf
-	width 45text%
+	width 50text%
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename gfx/hNeutron.pdf
-	width 45text%
+	width 50text%
 
 \end_inset
 
@@ -1788,24 +1844,31 @@ Proton, Neutron Energy vs Angle, Kein Cut in En vs Ep
 Break-up has almost no analyzing power, so discard it
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Protons and neutrons from break-up are energetically well separated from
  signal
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
-Complete stop of particles provides good signal separation
-\end_layout
-
 \begin_layout Description
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
 But: Break-up in target is not distinguishable from break-up in detector!
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
 \end_layout
 
 \end_deeper
