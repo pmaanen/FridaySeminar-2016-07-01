@@ -7,10 +7,10 @@
 \usetheme{rwth}
 \usepackage{braket}
 
-\title{JEDI Polarimetry}
-\subtitle{\vspace{2cm} \hspace{15cm} \includegraphics{gfx/jedi_logo2.png} \vspace{-2cm}}
+\title{Polarimetry for Storage Ring EDM experiments}
+\subtitle{\vspace{2cm} \hspace{15cm} \includegraphics{jedi_logo2.png} \vspace{-2cm}}
 \author{Paul Maanen}
-\institute{JEDI Collaboration | Physics Institute III B, RWTH Aachen University}
+\institute{Physics Institute III B, RWTH Aachen University}
 \date[July 1, 2016]{Friday Seminar July 1, 2016}
 
 % Some changes on the layout, can be switched off by commenting out
@@ -25,12 +25,12 @@
 % To get greek letters better matching with rest of font
 \usepackage{upgreek}
 
-\logo{\includegraphics{gfx/rwth_3physik_b_englisch_rgb.png}}
+\logo{\includegraphics{rwth_3physik_b_englisch_rgb.png}}
 
 \newif\ifexperimentlogo %-> defines a boolean variable for an if-case
 \experimentlogotrue     %-> sets it true(\experimentlogotrue)/false(\experimentlogofalse); !: no spaces between
 % \pgfdeclareimage[options]{name}[file}
-\pgfdeclareimage[height=13mm,interpolate=true]{experimentLogo}{gfx/jedi_logo2.png} %links a logo to the name experimentlogo 
+\pgfdeclareimage[height=13mm,interpolate=true]{experimentLogo}{jedi_logo2.png} %links a logo to the name experimentlogo 
 \AtBeginSection[]{
   \begin{frame}[plain, noframenumbering]{}
   \vfill
@@ -178,7 +178,17 @@ titlepage
 
 \end_layout
 
-\begin_layout Frame
+\begin_layout PlainFrame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+noframenumbering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Argument 4
 status open
 
@@ -207,7 +217,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Introduction
+Motivation
 \end_layout
 
 \begin_layout Frame
@@ -236,13 +246,31 @@ Where is the Antimatter in our Universe?
 \end_layout
 
 \begin_layout Itemize
-One precondition for Baryogenesis: 
-\begin_inset Formula $\mathcal{\cancel{CP}}$
+Sakharov (1967): Three conditions for baryogenesis
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At least one Baryon-number violating process.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cancel{\mathcal{C}}$
 \end_inset
 
+and 
+\begin_inset Formula $\cancel{\mathcal{CP}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Interactions outside of thermal equilibrium.
  
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 \begin_inset VSpace 5mm
 \end_inset
@@ -251,8 +279,11 @@ One precondition for Baryogenesis:
 \end_layout
 
 \begin_layout Itemize
-Standard Model prediction: 
-\begin_inset Formula $\frac{n_{B}-n_{\bar{B}}}{n_{\gamma}}\approx10^{-18}$
+Baryon number asymmetry: 
+\begin_inset Formula $\frac{n_{B}-n_{\overline{B}}}{n_{\gamma}}\approx\begin{cases}
+10^{-18} & (SM)\\
+10^{-10} & (Exp.)
+\end{cases}$
 \end_inset
 
 
@@ -260,14 +291,6 @@ Standard Model prediction:
 
 \begin_layout Standard
 \begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-WMAP and COBE (2012): 
-\begin_inset Formula $\frac{n_{B}-n_{\bar{B}}}{n_{\gamma}}\approx10^{-10}$
 \end_inset
 
 
@@ -284,50 +307,62 @@ Not enough
  in Standard Modell
 \end_layout
 
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Electric Dipole Moments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Classical Electric Dipole Moment: Charge separation
+\end_layout
+
+\begin_layout Itemize
+Interaction of electric and magnetic dipole moments with 
+\begin_inset Formula $\vec{E},\vec{B}$
+\end_inset
+
+:
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="3" columns="1">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{H}=-d\frac{\vec{S}}{S}\cdot\vec{E}$
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{P}$
 \end_inset
 
-
+: 
 \end_layout
 
 \end_inset
-</cell>
-<cell multirow="3" alignment="center" valignment="middle" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Box Ovalbox
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 1
-use_makebox 0
-width "20col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Formula $d=EDM$
-\end_inset
 
 
-\end_layout
-
+\begin_inset Formula $\mathcal{H}=-\mu\frac{\vec{S}}{S}\cdot\vec{B}\textcolor{red}{\ensuremath{-}}d\frac{\vec{S}}{S}\cdot\vec{E}$
 \end_inset
 
 
@@ -345,18 +380,9 @@ status collapsed
 \end_inset
 
 : 
-\begin_inset Formula $\mathcal{H}=+d\frac{\vec{S}}{S}\cdot\vec{E}$
+\begin_inset Formula $\mathcal{H}=-\mu\frac{\vec{S}}{S}\cdot\vec{B}\textcolor{red}{\ensuremath{+}}d\frac{\vec{S}}{S}\cdot\vec{E}$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -372,18 +398,9 @@ status collapsed
 \end_inset
 
 : 
-\begin_inset Formula $\mathcal{H}=+d\frac{\vec{S}}{S}\cdot\vec{E}$
+\begin_inset Formula $\mathcal{H}=-\mu\frac{\vec{S}}{S}\cdot\vec{B}\textcolor{red}{\ensuremath{+}}d\frac{\vec{S}}{S}\cdot\vec{E}$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -391,6 +408,59 @@ status collapsed
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Box Ovalbox
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 1
+use_makebox 0
+width "25text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Formula $\vec{d}=EDM$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\vec{\mu}=MDM$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\vec{\mu},\vec{d}\parallel\vec{S}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\cancel{T}\overset{\mathcal{CPT}}{\Leftrightarrow}\cancel{\mathcal{CP}}$
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -424,7 +494,7 @@ Moments violate
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-Probe into the physics of the early universe
+Probe into the Physics of the early universe
 \end_layout
 
 \end_deeper
@@ -437,7 +507,7 @@ Probe into the physics of the early universe
 status open
 
 \begin_layout Plain Layout
-Charged particle EDM
+Charged particle EDMs: Current Limits and Challenges 
 \end_layout
 
 \end_inset
@@ -447,9 +517,9 @@ Charged particle EDM
 
 \begin_deeper
 \begin_layout Itemize
-Most EDM searches measure neutron EDM.
- Current limit 
-\begin_inset Formula $\approx10^{-25}e\mathrm{cm}$
+Most EDM searches measure EDM of neutral particles.
+ Current Limits 
+\begin_inset Formula $10^{-17}e\mathrm{cm}-10^{-28}e\mathrm{cm}$
 \end_inset
 
 
@@ -463,39 +533,64 @@ Most EDM searches measure neutron EDM.
 \end_layout
 
 \begin_layout Itemize
-No limits for charged hadrons exist.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Hadron EDM experiments have potentially better sensitivity.
+No direct limits for charged hadrons exist
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Better lifetime
+Technical challenge: No trap for charged particles
 \end_layout
 
-\begin_layout Itemize
-More particles
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5mm
+\begin_deeper
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
+Storage
+\begin_inset space ~
+\end_inset
 
+Ring
+\begin_inset space ~
+\end_inset
+
+needed!
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-To disentangle EDM sources, more than one measurement needed!
+EDM search @ FZJ: 
+\begin_inset Formula $\mathrm{p},\mbox{\mathrm{\textcolor{red}{d}}},\mathrm{^{3}He}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -20mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Graphics
+	filename gfx/edm_current_limits_goals.png
+	lyxscale 25
+	height 8cm
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -508,7 +603,7 @@ To disentangle EDM sources, more than one measurement needed!
 status open
 
 \begin_layout Plain Layout
-EDM search in storage rings
+EDM searches in storage rings
 \end_layout
 
 \end_inset
@@ -522,11 +617,11 @@ All EDM experiments measure interaction between
 \begin_inset Formula $\vec{d}$
 \end_inset
 
- and electric field 
+ and 
 \begin_inset Formula $\vec{E}$
 \end_inset
 
-
+:
 \end_layout
 
 \begin_deeper
@@ -546,10 +641,26 @@ All EDM experiments measure interaction between
 
 \end_deeper
 \begin_layout Itemize
-EDM search in storage rings: Let EDM interact with fields, wait for polarization
+\begin_inset Quotes eld
+\end_inset
+
+Frozen Spin
+\begin_inset Quotes erd
+\end_inset
+
+ method: Align spin with momentum vector, wait for vertical polarization
  change: 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\frac{\Delta S_{y}}{\Delta t}\propto d$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset VSpace 5mm
 \end_inset
@@ -562,7 +673,7 @@ EDM search in storage rings: Let EDM interact with fields, wait for polarization
 \begin_inset Graphics
 	filename gfx/idea.png
 	lyxscale 30
-	height 8cm
+	height 7.5cm
 
 \end_inset
 
@@ -577,8 +688,8 @@ EDM search in storage rings: Let EDM interact with fields, wait for polarization
 \end_layout
 
 \begin_layout Itemize
-Current candidate method for EDM search implicates a linear buildup of polarizat
-ion with time at 
+Current candidate method for EDM search implicates a buildup of polarization
+ with time at 
 \begin_inset Formula $\Delta P=\mathcal{O}(10^{-6}/1000s)$
 \end_inset
 
@@ -607,7 +718,7 @@ Nuclear scattering polarimetry
 \begin_layout Itemize
 Nuclear scattering cross section for scattering of polarized particles:
  
-\begin_inset Formula $\sigma(\theta,\phi)=\sigma_{0}(\theta)\cdot\big(1+P_{y}A_{y}(\theta)\cdot\cos(\phi)\big)$
+\begin_inset Formula $\sigma_{L,R}=\sigma_{0}\cdot\big(1\pm P_{y}A_{y}\big)$
 \end_inset
 
 
@@ -618,8 +729,8 @@ Nuclear scattering cross section for scattering of polarized particles:
 \end_layout
 
 \begin_layout Itemize
-Measure left-right asymmetries in cross section: 
-\begin_inset Formula $P_{y}=\frac{1}{A_{y}}\frac{L-R}{L+R}$
+Measure left-right asymmetries in count rate: 
+\begin_inset Formula $P_{y}=\frac{1}{A_{y}}\frac{N_{L}-N_{R}}{N_{L}+N_{R}}$
 \end_inset
 
 
@@ -630,15 +741,11 @@ Measure left-right asymmetries in cross section:
 \end_layout
 
 \begin_layout Itemize
-May need to also include up, down to account for tensor polarization
+Up and Down counting rates may be used to control systematics
 \begin_inset VSpace 5mm
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-Currently using elastic deuteron-carbon scattering
 \end_layout
 
 \begin_layout Standard
@@ -676,7 +783,11 @@ Design goals for polarimeter:
 
 \begin_deeper
 \begin_layout Itemize
-Large FoM
+Large statistical Figure-of-Merit: 
+\begin_inset Formula $\mathcal{FOM\sim}N\cdot(P_{y}A_{y})^{2}$
+\end_inset
+
+
 \begin_inset VSpace 5mm
 \end_inset
 
@@ -692,7 +803,7 @@ Minimal influence on beam
 \end_layout
 
 \begin_layout Itemize
-High sensitivity to systematic effects
+Good handle on systematic effects
 \begin_inset VSpace 5mm
 \end_inset
 
@@ -700,7 +811,15 @@ High sensitivity to systematic effects
 \end_layout
 
 \begin_layout Itemize
-Good long term stability and reproducibility
+Good long term stability and reproducibility: 
+\begin_inset Formula $1$
+\end_inset
+
+ppm per 
+\begin_inset Formula $1000s$
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -714,7 +833,7 @@ Good long term stability and reproducibility
 \end_layout
 
 \begin_layout Section
-Detector concept
+Polarimeter concept
 \end_layout
 
 \begin_layout Frame
@@ -722,7 +841,7 @@ Detector concept
 status open
 
 \begin_layout Plain Layout
-Target choice
+Reaction choice
 \end_layout
 
 \end_inset
@@ -739,7 +858,7 @@ Target choice
 \align center
 \begin_inset Graphics
 	filename gfx/FOM.pdf
-	height 77.5theight%
+	height 60theight%
 
 \end_inset
 
@@ -747,15 +866,86 @@ Target choice
 \end_layout
 
 \begin_layout Itemize
-Carbon was chosen as working choice
+Carbon is the current material of choice
 \end_layout
 
 \begin_layout Itemize
-Large analysing power, high elastic cross section
+\begin_inset Formula $\mathcal{FOM}$
+\end_inset
+
+ concentrated in forward region
 \end_layout
 
+\begin_deeper
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Polarimeter
+\begin_inset space ~
+\end_inset
+
+needs
+\begin_inset space ~
+\end_inset
+
+to
+\begin_inset space ~
+\end_inset
+
+cover
+\begin_inset space ~
+\end_inset
+
+forward
+\begin_inset space ~
+\end_inset
+
+region
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-FOM for Protons also concentrated in the forward region
+Proton-Carbon elastic scattering also concentrated in forward region.
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Possibility for multi-purpose polarimeter
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Detector concept
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/DetectorSketch.pdf
+	lyxscale 25
+	height 100theight%
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -780,40 +970,6 @@ Target concept
 \begin_layout Standard
 \begin_inset Graphics
 	filename gfx/target.png
-	lyxscale 25
-	height 100theight%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Detector concept
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Graphics
-	filename gfx/DetectorSketch.pdf
 	lyxscale 25
 	height 100theight%
 
@@ -887,8 +1043,7 @@ HCal Candidate Materials: LYSO/Plastic Scintillator
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename gfx/lyso_sketch.svg
-	lyxscale 5
+	filename gfx/lyso-sketch.pdf
 	width 30text%
 
 \end_inset
@@ -919,8 +1074,7 @@ HCal Candidate Materials: LYSO/Plastic Scintillator
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename gfx/plastic_sketch.svg
-	lyxscale 5
+	filename gfx/plastic-sketch.pdf
 	width 30text%
 
 \end_inset
@@ -942,11 +1096,11 @@ HCal Candidate Materials: LYSO/Plastic Scintillator
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features rotate="0" booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -981,7 +1135,7 @@ Plastic
 \begin_inset Text
 
 \begin_layout Plain Layout
-Density [g/cm3] 
+Stopping power
 \end_layout
 
 \end_inset
@@ -990,7 +1144,7 @@ Density [g/cm3]
 \begin_inset Text
 
 \begin_layout Plain Layout
-7.3
++
 \end_layout
 
 \end_inset
@@ -999,36 +1153,7 @@ Density [g/cm3]
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.05
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Decay [ns]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-40
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2.4
+-
 \end_layout
 
 \end_inset
@@ -1039,9 +1164,7 @@ Decay [ns]
 \begin_inset Text
 
 \begin_layout Plain Layout
-L.
- Y.
- % NaI(Tl)
+Speed
 \end_layout
 
 \end_inset
@@ -1050,7 +1173,7 @@ L.
 \begin_inset Text
 
 \begin_layout Plain Layout
-75
++
 \end_layout
 
 \end_inset
@@ -1059,37 +1182,7 @@ L.
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-S.
- Peak [nm]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-420
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-420
++
 \end_layout
 
 \end_inset
@@ -1100,8 +1193,7 @@ S.
 \begin_inset Text
 
 \begin_layout Plain Layout
-N ref.
- 
+Energy resolution
 \end_layout
 
 \end_inset
@@ -1110,7 +1202,7 @@ N ref.
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.82
++
 \end_layout
 
 \end_inset
@@ -1119,41 +1211,7 @@ N ref.
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.58
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Melt.
- 
-\begin_inset Formula $[\text{°C}]$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2050
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-75
+-
 \end_layout
 
 \end_inset
@@ -1164,7 +1222,7 @@ Melt.
 \begin_inset Text
 
 \begin_layout Plain Layout
-Hygrosc.
+Cost
 \end_layout
 
 \end_inset
@@ -1173,7 +1231,7 @@ Hygrosc.
 \begin_inset Text
 
 \begin_layout Plain Layout
-No
+-
 \end_layout
 
 \end_inset
@@ -1182,65 +1240,7 @@ No
 \begin_inset Text
 
 \begin_layout Plain Layout
-No
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Radioact
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Yes
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-No
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Cheap
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-No
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Yes
++
 \end_layout
 
 \end_inset
@@ -1263,32 +1263,31 @@ Yes
 status open
 
 \begin_layout Plain Layout
-Signal and Background
+First step: Detector element dimensions
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Frame
 
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-\align center
 \begin_inset Graphics
-	filename gfx/EvsTheta.pdf
-	lyxscale 75
-	width 50text%
+	filename gfx/simulation-single.pdf
+	width 45text%
 
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 5text%
 \end_inset
 
 
 \begin_inset Graphics
-	filename gfx/hEpEn.pdf
-	width 50text%
+	filename gfx/simulation-sandwich.pdf
+	width 45text%
 
 \end_inset
 
@@ -1296,34 +1295,24 @@ Signal and Background
 \end_layout
 
 \begin_layout Itemize
-Elastically scattered deuterons retain almost complete beam energy.
-\end_layout
-
-\begin_layout Itemize
-Break-up has almost no analyzing power, so discard it
-\end_layout
-
-\begin_layout Itemize
-Protons and neutrons from break-up are energetically well separated
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
-Complete stop of particles provides good signal separation
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-No reliable model for inelastic reactions available
+Open Questions:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Qualitative experiments: Inelastic reactions carry some analysing power,
- so maybe keep these
+Optimal calorimeter element size?
+\end_layout
+
+\begin_layout Itemize
+Absorber Thickness?
+\end_layout
+
+\begin_layout Itemize
+Monolithic or Sandwich?
+\end_layout
+
+\begin_layout Itemize
+Plastic or LYSO?
 \end_layout
 
 \end_deeper
@@ -1337,7 +1326,14 @@ Qualitative experiments: Inelastic reactions carry some analysing power,
 status open
 
 \begin_layout Plain Layout
-LYSO module
+Detector dimensions - LYSO
+\begin_inset Graphics
+	filename gfx/lyso-sketch.pdf
+	height 10theight%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1347,8 +1343,9 @@ LYSO module
 
 \begin_deeper
 \begin_layout Standard
+\align right
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 lateral vs energy, range vs energy
@@ -1377,6 +1374,32 @@ lateral vs energy, range vs energy
 \end_layout
 
 \begin_layout Itemize
+To get lateral and longitudinal range of deuteron in detector element:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Shoot particle gun into front face, determine 
+\begin_inset Formula $x_{f},y_{f},z_{f}$
+\end_inset
+
+ of endpoint of primary track
+\end_layout
+
+\begin_layout Itemize
+Longitudinal range: Gaussian fit
+\end_layout
+
+\begin_layout Itemize
+Lateral width: 
+\begin_inset Formula $\int_{-x0}^{x0}dN/dx=90\%\cdot N_{tot}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 Chosen detector size of 
 \begin_inset Formula $3\times3\times10\,$
 \end_inset
@@ -1385,7 +1408,7 @@ Chosen detector size of
 \begin_inset Formula $\mathrm{cm}^{3}$
 \end_inset
 
-as starting value
+ as starting point for further studies
 \end_layout
 
 \end_deeper
@@ -1398,170 +1421,14 @@ as starting value
 status open
 
 \begin_layout Plain Layout
-Plastic scintillators
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
+Detector response - LYSO
 \begin_inset Graphics
-	filename gfx/thickness.pdf
-	width 50text%
+	filename gfx/lyso-sketch.pdf
+	height 10theight%
 
 \end_inset
 
 
-\begin_inset Graphics
-	filename ../DPG2016/deuteron-plastic-100-range.pdf
-	width 45text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Use absorber to suppress proton background and reduce length of plastic
- detector.
-\end_layout
-
-\begin_layout Itemize
-Arbitrarily chosen 
-\begin_inset Formula $50\,\mathrm{MeV}$
-\end_inset
-
- as working point for calorimeter element
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Tune thickness of absorber so that 
-\begin_inset Formula $E_{entry}=100\,\mathrm{MeV}$
-\end_inset
-
-for every beam energy
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Thickness vs Energy, Lateral vs Energy, Range vs Energy, Edep vs Eprim 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Simulation setup
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Bild einfügen
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Geometry: Single detector element
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Generated 100k events each at 
-\begin_inset Formula $T_{d}=270\,\mathrm{MeV}$
-\end_inset
-
-,
-\begin_inset Formula $5^{\circ}<\Theta<20^{\circ}$
-\end_inset
-
-, 
-\begin_inset Formula $0^{\circ}<\phi<360^{\circ}$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Signal: 
-\begin_inset Formula $^{12}C(d,d)^{12}C$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Background: 
-\begin_inset Formula $^{12}C(d,pn)^{12}C$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mathcal{FOM}\propto\sigma_{eff}\times<A_{y}>^{2}=(\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg})\times\left(\frac{A_{y,el}\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg}A_{y,bg}}{(\sigma_{el}\epsilon_{el}+\sigma_{bg}\epsilon_{bg})}\right)^{^{2}}$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Detector response - lyso
 \end_layout
 
 \end_inset
@@ -1594,7 +1461,383 @@ Breakup in detector element is main cause of efficiency loss.
 status open
 
 \begin_layout Plain Layout
+Detector dimensions - Plastic
+\begin_inset Graphics
+	filename gfx/plastic-sketch.pdf
+	height 10theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/thickness.pdf
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../DPG2016/deuteron-plastic-100-range.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use absorber to suppress proton background and reduce length of plastic
+ detector
+\end_layout
+
+\begin_layout Itemize
+Arbitrarily chosen 
+\begin_inset Formula $100\,\mathrm{MeV}$
+\end_inset
+
+ entry energy @ 
+\begin_inset Formula $270\,\mbox{MeV}$
+\end_inset
+
+ beam energy as working point for plastic scintillator
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Iron thickness ca.
+ 
+\begin_inset Formula $50\,\mbox{mm}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Pl.
+ scintillator thickness ca.
+ 
+\begin_inset Formula $50\,\mbox{mm}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Thickness vs Energy, Lateral vs Energy, Range vs Energy, Edep vs Eprim 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Detector response - Plastic
+\begin_inset Graphics
+	filename gfx/plastic-sketch.pdf
+	height 10theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/cocktail-plastic.pdf
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Next step(s): Monolithic or sandwich detector? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/simulation-single.pdf
+	width 45text%
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 5text%
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/simulation-sandwich.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Generated 100k events each at 
+\begin_inset Formula $T_{d}=270\,\mathrm{MeV}$
+\end_inset
+
+,
+\begin_inset Formula $5^{\circ}<\Theta<20^{\circ}$
+\end_inset
+
+, 
+\begin_inset Formula $0^{\circ}<\phi<360^{\circ}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Signal: 
+\begin_inset Formula $^{12}C(\vec{d},d)^{12}C$
+\end_inset
+
+,
+\begin_inset Formula $\sigma_{el}\approx X\mbox{\,mb}$
+\end_inset
+
+ ,
+\begin_inset Formula $<A_{y}>\approx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Background: 
+\begin_inset Formula $^{12}C(\vec{d},pn)^{12}C$
+\end_inset
+
+,
+\begin_inset Formula $\sigma_{el}\approx X\mbox{\,mb}$
+\end_inset
+
+ ,
+\begin_inset Formula $<A_{y}>\approx$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{FOM}\propto\sigma_{eff}\times<A_{y,eff}>^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Signal and Background generation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/hDeuteron.pdf
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/hCarbon.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Using data-driven model for signal and background
+\end_layout
+
+\begin_layout Itemize
+Elastically scattered deuterons retain almost complete beam energy.
+\end_layout
+
+\begin_layout Itemize
+Contribution of recoil carbons negligible
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Signal and Background generation (cont'd)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Proton, Neutron Energy vs Angle, Kein Cut in En vs Ep
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/hProton.pdf
+	width 45text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename gfx/hNeutron.pdf
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Break-up has almost no analyzing power, so discard it
+\end_layout
+
+\begin_layout Itemize
+Protons and neutrons from break-up are energetically well separated from
+ signal
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Complete stop of particles provides good signal separation
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+But: Break-up in target is not distinguishable from break-up in detector!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No reliable model for inelastic reactions available
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Qualitative experiments show: Inelastic reactions carry some analysing power,
+ so maybe keep these
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Detection efficiencies (lyso)
+\begin_inset Graphics
+	filename gfx/lyso-sketch.pdf
+	height 10theight%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1642,36 +1885,14 @@ Detection efficiencies (lyso)
 status open
 
 \begin_layout Plain Layout
-Detector response - plastic
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Graphics
-	filename gfx/cocktail-plastic.pdf
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 Detection efficiencies (plastic)
+\begin_inset Graphics
+	filename gfx/plastic-sketch.pdf
+	height 10theight%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1893,7 +2114,7 @@ R&D Beam time @ COSY: First results
 status open
 
 \begin_layout Plain Layout
-Beam time Spring 2016
+Beam time spring 2016
 \end_layout
 
 \end_inset
@@ -1903,7 +2124,11 @@ Beam time Spring 2016
 
 \begin_deeper
 \begin_layout Itemize
-External beam at COSY in Jülich
+External beam at 
+\noun on
+Cosy
+\noun default
+ in Jülich
 \end_layout
 
 \begin_layout Standard
@@ -1925,8 +2150,7 @@ LYSO crystals from two different manufacturers
 \end_layout
 
 \begin_layout Itemize
-PMT and Silicon Photomultiplier (SiPM).
- 
+PMT and Silicon Photomultiplier (SiPM)
 \end_layout
 
 \begin_layout Standard
@@ -1937,7 +2161,7 @@ PMT and Silicon Photomultiplier (SiPM).
 \end_layout
 
 \begin_layout Itemize
-Deuteron beam @ 100MeV, 150MeV, 200MeV, 235MeV and 270MeV
+Unpolarized Deuteron beam @ 100MeV, 200MeV, 235MeV and 270MeV
 \end_layout
 
 \begin_layout Standard
@@ -1948,7 +2172,7 @@ Deuteron beam @ 100MeV, 150MeV, 200MeV, 235MeV and 270MeV
 \end_layout
 
 \begin_layout Itemize
-Struck 14 bit, 250 MS/s Flash ADC.
+Struck 14 bit, 250 MS/s Flash ADC
 \end_layout
 
 \begin_layout Standard
@@ -1987,18 +2211,23 @@ Measurement setup
 
 \begin_deeper
 \begin_layout Standard
-Fabian Müller
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
-	filename gfx/setup_sketch.png
+	filename gfx/schematics.pdf
 	lyxscale 25
 	height 100theight%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -1cm
+\end_inset
+
+
+\size footnotesize
+Picture courtesy of Fabian Müller
 \end_layout
 
 \end_deeper
@@ -2025,10 +2254,6 @@ Measurement setup (cont'd)
 
 \begin_deeper
 \begin_layout Standard
-Fabian Müller
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
 	filename gfx/modules_side_view_w_labels.png
 	lyxscale 25
@@ -2039,44 +2264,16 @@ Fabian Müller
 
 \end_layout
 
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Energy calibration
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-\begin_inset Graphics
-	filename gfx/Calibration.pdf
-	height 100theight%
-
+\begin_inset VSpace -1cm
 \end_inset
 
 
+\size footnotesize
+Picture courtesy of Fabian Müller
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Separator
 
 \end_layout
@@ -2103,6 +2300,15 @@ Energy resolution
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -1cm
+\end_inset
+
+
+\size footnotesize
+Picture courtesy of Fabian Müller
 \end_layout
 
 \end_deeper
@@ -2132,13 +2338,12 @@ Efficiency
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace -1cm
 \end_inset
 
 
+\size footnotesize
+Picture courtesy of Fabian Müller
 \end_layout
 
 \end_deeper
@@ -2259,20 +2464,8 @@ The resolution of the LYSO modules was better than 3%
 \end_layout
 
 \begin_layout Itemize
-A deuteron reconstruction efficiency over 65% have been achieved in the
- whole energy spectrum
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5mm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-The SiPM readout promises good results without the need for an active amplificat
-ion circuit and high voltage
+A deuteron reconstruction efficiency over 65% has been achieved in the whole
+ energy spectrum
 \end_layout
 
 \end_deeper
@@ -2296,7 +2489,7 @@ Outlook
 \begin_deeper
 \begin_layout Itemize
 Theoretical calculations for signal and background cross sections and analyzing
- powers are under progress and will be included in simulation.
+ powers are under progress and will be included in simulation
 \end_layout
 
 \begin_layout Standard
@@ -2307,8 +2500,23 @@ Theoretical calculations for signal and background cross sections and analyzing
 \end_layout
 
 \begin_layout Itemize
-Next beamtime will include a greater number of crystals and test polarization
- measurements 
+Next beamtime will include a greater number of crystals and test sandwich
+ detector and polarization response
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Measurement of cross sections and analyzing powers with 
+\noun on
+Wasa @ Cosy 
+\noun default
+in preparation
 \end_layout
 
 \end_deeper
