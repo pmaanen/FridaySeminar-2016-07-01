@@ -258,7 +258,7 @@ At least one Baryon-number violating process.
 \begin_inset Formula $\cancel{\mathcal{C}}$
 \end_inset
 
-and 
+ and 
 \begin_inset Formula $\cancel{\mathcal{CP}}$
 \end_inset
 
@@ -327,7 +327,28 @@ Electric Dipole Moments
 
 \begin_deeper
 \begin_layout Itemize
-Classical Electric Dipole Moment: Charge separation
+Electric Dipole Moment:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Classical: Charge separation
+\end_layout
+
+\begin_layout Itemize
+Quantum Mechanical: 
+\begin_inset Formula $\Ket{\vec{d}}=q\Ket{\vec{r}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -490,6 +511,13 @@ Moments violate
 )
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Description
 \begin_inset Formula $\Rightarrow$
 \end_inset
@@ -518,13 +546,19 @@ Charged particle EDMs: Current Limits and Challenges
 \begin_deeper
 \begin_layout Itemize
 Most EDM searches measure EDM of neutral particles.
- Current Limits 
-\begin_inset Formula $10^{-17}e\mathrm{cm}-10^{-28}e\mathrm{cm}$
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Current Limits: 
+\begin_inset Formula $10^{-17}\,\mathrm{ecm}-10^{-28}\mathrm{\,ecm}$
 \end_inset
 
 
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 \begin_inset VSpace 5mm
 \end_inset
@@ -681,7 +715,7 @@ Frozen Spin
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace -95mm
+\begin_inset VSpace -90mm
 \end_inset
 
 
@@ -812,11 +846,11 @@ Good handle on systematic effects
 
 \begin_layout Itemize
 Good long term stability and reproducibility: 
-\begin_inset Formula $1$
+\begin_inset Formula $1\mbox{\,ppm}$
 \end_inset
 
-ppm per 
-\begin_inset Formula $1000s$
+ per 
+\begin_inset Formula $1000\,\mbox{s}$
 \end_inset
 
 
@@ -855,7 +889,6 @@ Reaction choice
 
 \begin_deeper
 \begin_layout Standard
-\align center
 \begin_inset Graphics
 	filename gfx/FOM.pdf
 	height 60theight%
@@ -1507,7 +1540,7 @@ Detector dimensions - Plastic
 
 
 \begin_inset Graphics
-	filename ../DPG2016/deuteron-plastic-100-range.pdf
+	filename gfx/deuteron-plastic-100-range.pdf
 	width 45text%
 
 \end_inset
@@ -1680,11 +1713,11 @@ Signal:
 \end_inset
 
 ,
-\begin_inset Formula $\sigma_{el}\approx X\mbox{\,mb}$
+\begin_inset Formula $\sigma\approx84\mbox{\,mb}$
 \end_inset
 
  ,
-\begin_inset Formula $<A_{y}>\approx$
+\begin_inset Formula $<A_{y}>\approx0.32$
 \end_inset
 
 
@@ -1696,11 +1729,11 @@ Background:
 \end_inset
 
 ,
-\begin_inset Formula $\sigma_{el}\approx X\mbox{\,mb}$
+\begin_inset Formula $\sigma\approx121\mbox{\,mb}$
 \end_inset
 
  ,
-\begin_inset Formula $<A_{y}>\approx$
+\begin_inset Formula $<A_{y}>\approx-0.09$
 \end_inset
 
 
